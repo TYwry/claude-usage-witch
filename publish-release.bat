@@ -38,8 +38,15 @@ echo 正在產生下載檔...
 if errorlevel 1 goto fail
 git push
 if errorlevel 1 goto fail
+rem 這個資料夾有新舊兩個 GitHub 儲存庫，明確指定發佈到 origin（目前的公開儲存庫），避免 gh 不知道要用哪一個
+set "REPO="
+for /f "delims=" %%r in ('git remote get-url origin') do set "REPO=%%r"
+if not defined REPO goto fail
+set "REPO=%REPO:https://github.com/=%"
+set "REPO=%REPO:.git=%"
+echo 發佈到：%REPO%
 echo 正在發佈到 GitHub...
-gh release create "%VER%" "release\ClaudeUsageWidget.zip" "release\ClaudeUsageWidget-mac.zip" --title "%VER%" --notes-file "dev\release-notes.md"
+gh release create "%VER%" --repo "%REPO%" "release\ClaudeUsageWidget.zip" "release\ClaudeUsageWidget-mac.zip" --title "%VER%" --notes-file "dev\release-notes.md"
 if errorlevel 1 goto fail
 
 echo.
