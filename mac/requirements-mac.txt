@@ -1,0 +1,5 @@
+# Mac 版需要的套件（打包者用）
+# PySide6 6.7 是最後一個支援 macOS 11 (Big Sur) 的版本，讓比較舊的 Mac 也能用；需要 Python 3.10～3.12
+PySide6>=6.7,<6.8
+# 用來隱藏 Dock 上多出來的 Python 圖示
+pyobjc-framework-Cocoa>=10,<12

@@ -1,0 +1,60 @@
+# 金鑰與密碼
+config.json
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.p12
+*secret*
+*password*
+*credential*
+*apikey*
+*api_key*
+
+# 個人資料（本程式的資料預設存在使用者資料夾，這裡再保險一次）
+usage_log.csv
+last_page.txt
+settings.json
+history.json
+error.log
+web/
+
+# 自動產生的檔案
+*.log
+*.tmp
+__pycache__/
+*.pyc
+.venv/
+venv/
+build/
+dist/
+release/
+*.spec
+dev/assets.json
+
+# 開發用暫存與本機文件
+*.lnk
+Claude outputs/
+dev/cry_asset.json
+.commit-message.txt
+*.bundle
+*.zip
+HANDOFF.md
+dev/shock_asset.json
+dev/backup_v4.3/
+dev/backup_v4.4/
+dev/backup_v4.5/
+dev/backup_v4.6/
+.venv-mac/
+build-mac/
+dist-mac/
+dev/backup_v4.7/
+dev/backup_v4.9/
+.DS_Store
+.python-mac/
+.python-build-*/
+.venv-build-*/
+
+# 開發筆記（含本機路徑），不上傳
+進度清單.md
